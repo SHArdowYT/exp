@@ -1,0 +1,20 @@
+[
+  {
+    "id": "dummy-alice",
+    "email": "alice@example.com",
+    "name": "Alice Example",
+    "picture": "https://api.dicebear.com/9.x/thumbs/svg?seed=alice"
+  },
+  {
+    "id": "dummy-bob",
+    "email": "bob@example.com",
+    "name": "Bob Example",
+    "picture": "https://api.dicebear.com/9.x/thumbs/svg?seed=bob"
+  },
+  {
+    "id": "dummy-carol",
+    "email": "carol@example.com",
+    "name": "Carol Example",
+    "picture": "https://api.dicebear.com/9.x/thumbs/svg?seed=carol"
+  }
+]
