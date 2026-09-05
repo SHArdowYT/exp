@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="no-referrer">
+    <title>{% block title %}App{% endblock %}</title>
+    <link rel="stylesheet" href="/static/style.css">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <main class="card {% block card_modifier %}{% endblock %}" role="main">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}{{ user.name }}{% endblock %}
+{% block content %}
+    <span class="eyebrow">Signed in</span>
+    <img
+        class="avatar"
+        src="{{ user.picture }}"
+        width="64"
+        height="64"
+        alt="Profile picture for {{ user.name }}"
+    >
+    <h1 class="heading">{{ user.name }}</h1>
+    <p class="subtitle">{{ user.email }}</p>
+    <div class="divider" aria-hidden="true"></div>
+    <a
+        href="/auth/logout"
+        class="button button--outline"
+        role="button"
+        aria-label="Sign out"
+    >
+        Sign out
+    </a>
+{% endblock %}

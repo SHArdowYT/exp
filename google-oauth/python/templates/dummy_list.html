@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Test users{% endblock %}
+{% block card_modifier %}card--wide{% endblock %}
+{% block content %}
+    <span class="eyebrow">Development only</span>
+    <h1 class="heading">Test users</h1>
+    <p class="subtitle">Defined in dummy_users.json. Never enable in production.</p>
+    <ul class="user-list" role="list" aria-label="Available test users">
+        {% for user in users %}
+        <li class="user-list__item">
+            <img
+                class="user-list__avatar"
+                src="{{ user.picture }}"
+                width="32"
+                height="32"
+                alt=""
+                aria-hidden="true"
+            >
+            <div class="user-list__info">
+                <span class="user-list__name">{{ user.name }}</span>
+                <span class="user-list__email">{{ user.email }}</span>
+            </div>
+            <a
+                href="/auth/dummy?id={{ user.id }}"
+                class="button button--outline user-list__action"
+                role="button"
+                aria-label="Sign in as {{ user.name }}"
+            >
+                Sign in
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,19 @@
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "RUF"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+ignore_missing_imports = true
+
+[tool.pylint.format]
+max-line-length = 120
+
+[tool.pylint."messages control"]
+# R0903: too-few-public-methods -- not meaningful for handler/config classes
+# C0305: trailing-newlines -- files correctly end with a single newline
+disable = ["R0903", "C0305"]

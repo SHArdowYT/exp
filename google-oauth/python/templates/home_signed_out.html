@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Sign in{% endblock %}
+{% block content %}
+    <span class="eyebrow">Welcome</span>
+    <h1 class="heading">Sign in</h1>
+    <p class="subtitle">Use your Google account to continue.</p>
+    <div class="divider" aria-hidden="true"></div>
+    <a
+        href="/auth/login"
+        class="button button--google"
+        role="button"
+        aria-label="Sign in with Google"
+    >
+        <img
+            src="/static/images/google.svg"
+            width="18"
+            height="18"
+            alt=""
+            aria-hidden="true"
+        >
+        Continue with Google
+    </a>
+{% endblock %}

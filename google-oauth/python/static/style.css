@@ -1,0 +1,315 @@
+/* ============================================================
+   Departure Mono -- https://github.com/rektdeckard/departure-mono
+   Font files are served locally from static/fonts/.
+   Run scripts/update_fonts.py to download a newer version.
+   Aesthetic: white, minimalist, editorial
+
+   Naming convention: BEM (Block Element Modifier)
+   https://getbem.com/naming/
+     block              -- standalone component
+     block__element     -- part of a block, no standalone meaning
+     block--modifier    -- variant of a block or element
+   ============================================================ */
+
+@font-face {
+    font-family: "Departure Mono";
+    src: url("/static/fonts/DepartureMono-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ============================================================
+   Reset
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ============================================================
+   Custom properties
+   ============================================================ */
+
+:root {
+    --colour-bg:          #FFFFFF;
+    --colour-fg:          #111111;
+    --colour-muted:       #888888;
+    --colour-border:      #E0E0E0;
+    --colour-hover-bg:    #F5F5F5;
+    --colour-accent:      #111111;
+    --colour-accent-text: #FFFFFF;
+
+    --font-mono: "Departure Mono", "Courier New", monospace;
+
+    --space-xs:  0.25rem;
+    --space-sm:  0.5rem;
+    --space-md:  1rem;
+    --space-lg:  2rem;
+    --space-xl:  3rem;
+
+    --transition-speed: 120ms;
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+
+html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-mono);
+    background: var(--colour-bg);
+    color: var(--colour-fg);
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg) var(--space-md);
+    line-height: 1.5;
+}
+
+/* ============================================================
+   Focus -- visible for keyboard nav, hidden for pointer
+   ============================================================ */
+
+:focus-visible {
+    outline: 2px solid var(--colour-fg);
+    outline-offset: 3px;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* ============================================================
+   card
+   ============================================================ */
+
+.card {
+    width: 100%;
+    max-width: 420px;
+    padding: var(--space-xl) var(--space-lg);
+    border: 1px solid var(--colour-border);
+    background: var(--colour-bg);
+}
+
+.card--wide {
+    max-width: 560px;
+}
+
+/* ============================================================
+   eyebrow -- small uppercase label above a heading
+   ============================================================ */
+
+.eyebrow {
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--colour-muted);
+    margin-bottom: var(--space-lg);
+}
+
+/* ============================================================
+   heading
+   ============================================================ */
+
+.heading {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin-bottom: var(--space-sm);
+}
+
+/* ============================================================
+   subtitle
+   ============================================================ */
+
+.subtitle {
+    font-size: 0.85rem;
+    color: var(--colour-muted);
+    margin-bottom: var(--space-lg);
+}
+
+/* ============================================================
+   avatar
+   ============================================================ */
+
+.avatar {
+    display: block;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin-bottom: var(--space-md);
+    border: 1px solid var(--colour-border);
+}
+
+/* ============================================================
+   divider
+   ============================================================ */
+
+.divider {
+    width: 2rem;
+    height: 1px;
+    background: var(--colour-border);
+    margin: var(--space-lg) 0;
+}
+
+/* ============================================================
+   button -- all interactive targets >= 44x44px for touch
+   ============================================================ */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    min-height: 44px;
+    padding: 0 var(--space-lg);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition:
+        background var(--transition-speed) ease,
+        color var(--transition-speed) ease,
+        border-color var(--transition-speed) ease;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+.button--primary {
+    background: var(--colour-accent);
+    color: var(--colour-accent-text);
+}
+
+.button--primary:hover,
+.button--primary:active {
+    background: #333333;
+}
+
+.button--outline {
+    background: transparent;
+    color: var(--colour-fg);
+    border: 1px solid var(--colour-border);
+}
+
+.button--outline:hover,
+.button--outline:active {
+    background: var(--colour-hover-bg);
+    border-color: var(--colour-fg);
+}
+
+/* ============================================================
+   button--google -- keeps brand colours in the icon only
+   ============================================================ */
+
+.button--google {
+    background: transparent;
+    color: var(--colour-fg);
+    border: 1px solid var(--colour-border);
+    width: 100%;
+}
+
+.button--google:hover,
+.button--google:active {
+    background: var(--colour-hover-bg);
+    border-color: var(--colour-fg);
+}
+
+.button--google img {
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   user-list
+   ============================================================ */
+
+.user-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+}
+
+.user-list__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-sm);
+    border: 1px solid var(--colour-border);
+    transition: border-color var(--transition-speed) ease;
+    min-height: 56px;
+}
+
+.user-list__item:hover {
+    border-color: var(--colour-fg);
+}
+
+.user-list__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 1px solid var(--colour-border);
+}
+
+.user-list__info {
+    flex: 1;
+    min-width: 0;
+}
+
+.user-list__name {
+    display: block;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.user-list__email {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--colour-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.user-list__action {
+    flex-shrink: 0;
+    min-height: 36px;
+    padding: 0 var(--space-md);
+    font-size: 0.75rem;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+@media (max-width: 480px) {
+    .card {
+        padding: var(--space-lg) var(--space-md);
+        border-left: none;
+        border-right: none;
+        max-width: 100%;
+    }
+
+    .card--wide {
+        max-width: 100%;
+    }
+}
